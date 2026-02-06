@@ -1,20 +1,5 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import SkillCard from "./SkillCard";
-import {
-  Code2,
-  Database,
-  Layout,
-  Server,
-  Wrench,
-  Palette,
-  Globe,
-  Smartphone,
-  GitBranch,
-  Cloud,
-  Terminal,
-  Figma,
-} from "lucide-react";
 
 type TabKey = "frontend" | "backend" | "tools" | "design";
 
@@ -32,47 +17,68 @@ const tabs: Tab[] = [
 ];
 
 const skillsData = {
-  frontend: [
-    { name: "React", icon: <Code2 />, level: 95 },
-    { name: "TypeScript", icon: <Code2 />, level: 90 },
-    { name: "Next.js", icon: <Globe />, level: 85 },
-    { name: "Tailwind CSS", icon: <Layout />, level: 95 },
-    { name: "Vue.js", icon: <Code2 />, level: 75 },
-    { name: "React Native", icon: <Smartphone />, level: 70 },
-  ],
-  backend: [
-    { name: "Node.js", icon: <Server />, level: 90 },
-    { name: "Python", icon: <Terminal />, level: 85 },
-    { name: "PostgreSQL", icon: <Database />, level: 88 },
-    { name: "MongoDB", icon: <Database />, level: 80 },
-    { name: "GraphQL", icon: <Globe />, level: 75 },
-    { name: "AWS", icon: <Cloud />, level: 78 },
-  ],
-  tools: [
-    { name: "Git", icon: <GitBranch />, level: 95 },
-    { name: "Docker", icon: <Server />, level: 85 },
-    { name: "VS Code", icon: <Code2 />, level: 95 },
-    { name: "Linux", icon: <Terminal />, level: 80 },
-    { name: "CI/CD", icon: <Wrench />, level: 82 },
-    { name: "Webpack", icon: <Wrench />, level: 75 },
-  ],
-  design: [
-    { name: "Figma", icon: <Figma />, level: 88 },
-    { name: "UI/UX", icon: <Palette />, level: 85 },
-    { name: "Prototyping", icon: <Layout />, level: 80 },
-    { name: "Animation", icon: <Palette />, level: 75 },
-    { name: "Responsive", icon: <Smartphone />, level: 92 },
-    { name: "Design Systems", icon: <Layout />, level: 85 },
-  ],
+  frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "JavaScript", "HTML5", "CSS3", "Redux"],
+  backend: ["Node.js", "Python", "PostgreSQL", "MongoDB", "GraphQL", "AWS", "Express", "Django", "REST APIs"],
+  tools: ["Git", "Docker", "VS Code", "Linux", "CI/CD", "Webpack", "Vite", "Jest", "Postman"],
+  design: ["Figma", "UI/UX", "Prototyping", "Animation", "Responsive Design", "Design Systems", "Adobe XD", "Wireframing"],
+};
+
+const glowClasses = {
+  cyan: {
+    text: "group-hover:text-glow-cyan",
+    bg: "group-hover:bg-glow-cyan/20",
+    border: "group-hover:border-glow-cyan/50",
+    glow: "group-hover:glow-cyan",
+    activeText: "text-glow-cyan",
+    activeBg: "bg-glow-cyan/10",
+    activeBorder: "border-glow-cyan/30",
+  },
+  purple: {
+    text: "group-hover:text-glow-purple",
+    bg: "group-hover:bg-glow-purple/20",
+    border: "group-hover:border-glow-purple/50",
+    glow: "group-hover:glow-purple",
+    activeText: "text-glow-purple",
+    activeBg: "bg-glow-purple/10",
+    activeBorder: "border-glow-purple/30",
+  },
+  green: {
+    text: "group-hover:text-glow-green",
+    bg: "group-hover:bg-glow-green/20",
+    border: "group-hover:border-glow-green/50",
+    glow: "group-hover:glow-green",
+    activeText: "text-glow-green",
+    activeBg: "bg-glow-green/10",
+    activeBorder: "border-glow-green/30",
+  },
+  orange: {
+    text: "group-hover:text-glow-orange",
+    bg: "group-hover:bg-glow-orange/20",
+    border: "group-hover:border-glow-orange/50",
+    glow: "group-hover:glow-orange",
+    activeText: "text-glow-orange",
+    activeBg: "bg-glow-orange/10",
+    activeBorder: "border-glow-orange/30",
+  },
+  pink: {
+    text: "group-hover:text-glow-pink",
+    bg: "group-hover:bg-glow-pink/20",
+    border: "group-hover:border-glow-pink/50",
+    glow: "group-hover:glow-pink",
+    activeText: "text-glow-pink",
+    activeBg: "bg-glow-pink/10",
+    activeBorder: "border-glow-pink/30",
+  },
 };
 
 const SkillsSection = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("frontend");
   const currentTab = tabs.find((t) => t.key === activeTab)!;
+  const colors = glowClasses[currentTab.glowColor];
 
   return (
     <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -80,27 +86,28 @@ const SkillsSection = () => {
             <span className="text-primary text-glow-cyan">Skills</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore my technical expertise across different domains. Each skill represents
-            years of hands-on experience and continuous learning.
+            Explore my technical expertise across different domains.
           </p>
         </div>
 
-        {/* Tabs */}
+        {/* Tabs Navigation */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
           {tabs.map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               className={cn(
-                "px-6 py-3 rounded-full font-medium transition-all duration-300",
-                "border backdrop-blur-sm",
+                "px-5 py-2.5 rounded-full font-medium transition-all duration-300",
+                "border backdrop-blur-sm text-sm md:text-base",
                 activeTab === tab.key
                   ? cn(
                       "border-transparent",
-                      tab.glowColor === "cyan" && "bg-glow-cyan/20 text-glow-cyan glow-cyan",
-                      tab.glowColor === "purple" && "bg-glow-purple/20 text-glow-purple glow-purple",
-                      tab.glowColor === "green" && "bg-glow-green/20 text-glow-green glow-green",
-                      tab.glowColor === "pink" && "bg-glow-pink/20 text-glow-pink glow-pink"
+                      glowClasses[tab.glowColor].activeBg,
+                      glowClasses[tab.glowColor].activeText,
+                      tab.glowColor === "cyan" && "glow-cyan",
+                      tab.glowColor === "purple" && "glow-purple",
+                      tab.glowColor === "green" && "glow-green",
+                      tab.glowColor === "pink" && "glow-pink"
                     )
                   : "border-border bg-secondary/50 text-muted-foreground hover:text-foreground hover:border-muted-foreground/50"
               )}
@@ -110,20 +117,46 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
+        {/* Active Tab Heading */}
+        <div className="text-center mb-10">
+          <h3
+            className={cn(
+              "text-3xl md:text-4xl font-bold transition-all duration-300",
+              colors.activeText,
+              currentTab.glowColor === "cyan" && "text-glow-cyan",
+              currentTab.glowColor === "purple" && "text-glow-purple",
+              currentTab.glowColor === "green" && "text-glow-green",
+              currentTab.glowColor === "pink" && "text-glow-pink"
+            )}
+          >
+            {currentTab.label}
+          </h3>
+        </div>
+
+        {/* Skills as small glowing pills */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
           {skillsData[activeTab].map((skill, index) => (
             <div
-              key={skill.name}
-              className="animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={skill}
+              className={cn(
+                "group px-5 py-3 rounded-xl cursor-pointer",
+                "glass-card border transition-all duration-300",
+                "hover:scale-105 hover:-translate-y-1",
+                colors.bg,
+                colors.border,
+                colors.glow,
+                "animate-fade-in"
+              )}
+              style={{ animationDelay: `${index * 50}ms` }}
             >
-              <SkillCard
-                name={skill.name}
-                icon={skill.icon}
-                level={skill.level}
-                glowColor={currentTab.glowColor}
-              />
+              <span
+                className={cn(
+                  "font-medium text-muted-foreground transition-colors duration-300",
+                  colors.text
+                )}
+              >
+                {skill}
+              </span>
             </div>
           ))}
         </div>
