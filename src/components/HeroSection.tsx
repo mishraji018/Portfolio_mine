@@ -1,7 +1,31 @@
+import { useState, useEffect } from "react";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const rotatingTexts = [
+  "Pawan",
+  "an Engineer",
+  "an AI Enthusiast",
+  "a Problem Solver",
+  "a Tech Explorer",
+];
+
 const HeroSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % rotatingTexts.length);
+        setIsVisible(true);
+      }, 500);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background gradients */}
@@ -25,16 +49,23 @@ const HeroSection = () => {
         {/* Status badge */}
         <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 animate-fade-in">
           <span className="w-2 h-2 bg-glow-green rounded-full animate-pulse" />
-          <span className="text-sm text-muted-foreground">Available for work</span>
+          <span className="text-sm text-muted-foreground">Available for opportunities</span>
         </div>
 
-        {/* Main heading */}
+        {/* Main heading with rotating text */}
         <h1
           className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in"
           style={{ animationDelay: "0.1s" }}
         >
           <span className="text-foreground">Hi, I'm </span>
-          <span className="text-primary text-glow-cyan">John</span>
+          <span
+            className={cn(
+              "text-primary text-glow-cyan inline-block min-w-[200px] md:min-w-[320px] transition-all duration-500",
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+            )}
+          >
+            {rotatingTexts[currentIndex]}
+          </span>
         </h1>
 
         {/* Role */}
@@ -42,9 +73,9 @@ const HeroSection = () => {
           className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
-          <span className="text-foreground font-medium">Full Stack Developer</span>
+          <span className="text-foreground font-medium">AI Engineer</span>
           <span className="mx-3 text-border">|</span>
-          <span>Creating digital experiences</span>
+          <span>Building intelligent solutions</span>
         </div>
 
         {/* Description */}
@@ -52,8 +83,8 @@ const HeroSection = () => {
           className="text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in"
           style={{ animationDelay: "0.3s" }}
         >
-          I build modern web applications with clean code and stunning interfaces.
-          Passionate about creating seamless user experiences that make a difference.
+          Passionate about artificial intelligence, machine learning, and creating 
+          innovative solutions that push the boundaries of technology.
         </p>
 
         {/* Social links */}
@@ -90,7 +121,7 @@ const HeroSection = () => {
             href="#skills"
             className="inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
-            <span className="text-sm">Explore Skills</span>
+            <span className="text-sm">Explore More</span>
             <ArrowDown className="w-5 h-5" />
           </a>
         </div>
