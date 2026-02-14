@@ -100,6 +100,8 @@ const HeroSection = () => {
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "glass rounded-full p-3 transition-all duration-300",
                 "hover:glow-cyan hover:border-glow-cyan/50 hover:text-primary",
