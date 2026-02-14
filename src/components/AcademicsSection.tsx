@@ -55,69 +55,35 @@ const AcademicsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Education */}
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          {/* Achievements & Courses */}
-          <div className="space-y-8">
-            {/* Achievements */}
-            <div>
-              <h3 className="text-2xl font-semibold flex items-center gap-3 text-foreground mb-6">
-                <Award className="w-6 h-6 text-glow-green" />
-                Achievements
-              </h3>
-              <div className="glass-card rounded-xl p-6">
-                <ul className="space-y-3">
-                  {achievements.map((achievement, index) =>
+        {/* Achievements & Courses */}
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 className="text-2xl font-semibold flex items-center gap-3 text-foreground mb-6">
+              <Award className="w-6 h-6 text-glow-green" />
+              Achievements
+            </h3>
+            <div className="glass-card rounded-xl p-6">
+              <ul className="space-y-3">
+                {achievements.map((achievement, index) => (
                   <li
                     key={achievement}
                     className="flex items-start gap-3 text-muted-foreground animate-fade-in"
                     style={{ animationDelay: `${index * 50}ms` }}>
-
-                      <span className="w-2 h-2 mt-2 rounded-full bg-glow-green flex-shrink-0" />
-                      {achievement}
-                    </li>
-                  )}
-                </ul>
-              </div>
+                    <span className="w-2 h-2 mt-2 rounded-full bg-glow-green flex-shrink-0" />
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
 
-            {/* Relevant Courses */}
-            <div>
-              <h3 className="text-2xl font-semibold flex items-center gap-3 text-foreground mb-6">
-                <BookOpen className="w-6 h-6 text-glow-green" />
-                Key Courses
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {courses.map((course, index) =>
+          <div>
+            <h3 className="text-2xl font-semibold flex items-center gap-3 text-foreground mb-6">
+              <BookOpen className="w-6 h-6 text-glow-green" />
+              Key Courses
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {courses.map((course, index) => (
                 <span
                   key={course}
                   className={cn(
@@ -128,12 +94,37 @@ const AcademicsSection = () => {
                     "animate-fade-in"
                   )}
                   style={{ animationDelay: `${index * 50}ms` }}>
+                  {course}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
 
-                    {course}
-                  </span>
+        {/* Education - Last */}
+        <div>
+          <h3 className="text-2xl font-semibold flex items-center gap-3 text-foreground mb-6">
+            <GraduationCap className="w-6 h-6 text-glow-green" />
+            Education
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {education.map((edu, index) => (
+              <div
+                key={edu.degree}
+                className="glass-card rounded-xl p-6 border border-glow-green/10 hover:border-glow-green/30 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}>
+                <h4 className="text-lg font-semibold text-foreground mb-1">{edu.degree}</h4>
+                <p className="text-glow-green font-medium mb-2">{edu.institution}</p>
+                <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+                  <span>{edu.year}</span>
+                  <span>•</span>
+                  <span>{edu.grade}</span>
+                </div>
+                {edu.specialization && (
+                  <p className="text-sm text-muted-foreground mt-2">{edu.specialization}</p>
                 )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
