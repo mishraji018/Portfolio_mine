@@ -17,10 +17,10 @@ const tabs: Tab[] = [
 ];
 
 const skillsData = {
-  frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "JavaScript", "HTML5", "CSS3", "Redux"],
-  backend: ["Node.js", "Python", "PostgreSQL", "MongoDB", "GraphQL", "AWS", "Express", "Django", "REST APIs"],
-  tools: ["Git", "Docker", "VS Code", "Linux", "CI/CD", "Webpack", "Vite", "Jest", "Postman"],
-  design: ["Figma", "UI/UX", "Prototyping", "Animation", "Responsive Design", "Design Systems", "Adobe XD", "Wireframing"],
+  frontend: ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Responsive Design", "DOM Manipulation", "AJAX", "JSON"],
+  backend: ["Node.js", "Python", "Java", "C++", "SQL", "PHP", "Data Structures", "Algorithms", "OOPs"],
+  tools: ["Git", "GitHub", "VS Code", "Linux", "NPM", "Chrome DevTools", "Figma", "Netlify", "Vercel"],
+  design: ["CSS Animations", "Transitions", "Keyframes", "Flexbox", "Grid Layout", "SVG Animation", "Hover Effects", "Responsive UI"],
 };
 
 const glowClasses = {

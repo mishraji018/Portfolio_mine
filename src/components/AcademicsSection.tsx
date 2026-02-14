@@ -3,17 +3,17 @@ import { GraduationCap, Award, BookOpen } from "lucide-react";
 
 const education = [
   {
-    degree: "B.Tech in Computer Science",
-    institution: "XYZ Institute of Technology",
+    degree: "B.Tech in Computer Science Engineering",
+    institution: "KIET Group of Institutions",
     year: "2021 - 2025",
     grade: "CGPA: 8.5/10",
     specialization: "Artificial Intelligence & Machine Learning",
   },
   {
     degree: "Higher Secondary (12th)",
-    institution: "ABC Senior Secondary School",
-    year: "2019 - 2021",
-    grade: "Percentage: 92%",
+    institution: "RPM Academy",
+    year: "2022 - 2023",
+    grade: "Percentage: 81%",
     specialization: "Science (PCM)",
   },
 ];
