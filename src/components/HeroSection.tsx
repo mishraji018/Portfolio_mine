@@ -93,9 +93,9 @@ const HeroSection = () => {
           style={{ animationDelay: "0.4s" }}
         >
           {[
-            { icon: <Github className="w-5 h-5" />, label: "GitHub", href: "#" },
-            { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", href: "#" },
-            { icon: <Mail className="w-5 h-5" />, label: "Email", href: "#" },
+            { icon: <Github className="w-5 h-5" />, label: "GitHub", href: "https://github.com/mishraji018" },
+            { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", href: "https://www.linkedin.com/in/%E1%B4%98%E1%B4%80%E1%B4%A1%E1%B4%80%C9%B4-%E1%B4%8B%E1%B4%9C%E1%B4%8D%E1%B4%80%CA%80-%E1%B4%8D%C9%AA%EA%9C%B1%CA%9C%CA%80%E1%B4%80-7b9791321/" },
+            { icon: <Mail className="w-5 h-5" />, label: "Email", href: "mailto:pmishra2084@gmail.com" },
           ].map((social) => (
             <a
               key={social.label}
