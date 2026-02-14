@@ -5,7 +5,7 @@ const education = [
   {
     degree: "B.Tech in Computer Science Engineering",
     institution: "KIET Group of Institutions",
-    year: "2021 - 2025",
+    year: "2024 - 2028",
     grade: "CGPA: 8.5/10",
     specialization: "Artificial Intelligence & Machine Learning",
   },
@@ -28,14 +28,16 @@ const achievements = [
 ];
 
 const courses = [
-  "Machine Learning",
-  "Deep Learning",
-  "Natural Language Processing",
-  "Computer Vision",
   "Data Structures & Algorithms",
+  "Object Oriented Programming",
   "Database Management Systems",
-  "Cloud Computing",
-  "Big Data Analytics",
+  "Operating Systems",
+  "Computer Networks",
+  "Discrete Mathematics",
+  "Theory of Computation",
+  "Software Engineering",
+  "Computer Architecture",
+  "Web Development",
 ];
 
 const AcademicsSection = () => {
