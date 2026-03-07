@@ -67,7 +67,7 @@ http://localhost:8080
 (After deployment)
 
 ```
-https://portfolio-mine.vercel.app
+https://portfolio-mine-sage-eight.vercel.app
 ```
 
 ## 📬 Contact
