@@ -3,30 +3,30 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "AI Chatbot Assistant",
-    description: "An intelligent conversational AI powered by NLP and deep learning for customer support automation.",
-    tech: ["Python", "TensorFlow", "NLP", "FastAPI"],
-    github: "#",
-    live: "#",
+    title: "Voice Assistant AI",
+    description: "Python based AI voice assistant",
+    tech: ["Python", "SpeechRecognition", "PyAudio", "NLP"],
+    github: "https://github.com/mishraji018/Voice_assistant_anti",
+    live: "https://github.com/mishraji018/Voice_assistant_anti",
   },
   {
-    title: "Image Recognition System",
-    description: "Computer vision application for real-time object detection and classification using CNNs.",
-    tech: ["PyTorch", "OpenCV", "YOLO", "Flask"],
-    github: "#",
-    live: "#",
+    title: "Task Caretaker",
+    description: "Task management automation tool",
+    tech: ["React", "Node.js", "MongoDB", "Automation"],
+    github: "https://github.com/mishraji018/task_caretaker",
+    live: "https://github.com/mishraji018/task_caretaker",
   },
   {
-    title: "Predictive Analytics Dashboard",
-    description: "ML-powered analytics platform for business forecasting and data visualization.",
-    tech: ["Scikit-learn", "Pandas", "React", "D3.js"],
-    github: "#",
-    live: "#",
+    title: "Portfolio Website",
+    description: "Personal developer portfolio",
+    tech: ["React", "TypeScript", "TailwindCSS", "Vite"],
+    github: "https://github.com/mishraji018",
+    live: "https://github.com/mishraji018",
   },
   {
-    title: "Smart Recommendation Engine",
-    description: "Personalized recommendation system using collaborative filtering and content-based algorithms.",
-    tech: ["Python", "AWS", "MongoDB", "Redis"],
+    title: "Solar System",
+    description: "Interactive solar system simulation",
+    tech: ["JavaScript", "Three.js", "HTML", "CSS"],
     github: "#",
     live: "#",
   },
@@ -40,7 +40,7 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-foreground">My </span>
-            <span className="text-glow-purple text-glow-purple">Projects</span>
+            <span className="text-glow-purple">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A showcase of my AI and engineering projects that demonstrate my skills.
@@ -65,7 +65,7 @@ const ProjectsSection = () => {
               <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                 {project.description}
               </p>
-              
+
               {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mb-5">
                 {project.tech.map((tech) => (
@@ -79,21 +79,65 @@ const ProjectsSection = () => {
               </div>
 
               {/* Links */}
-              <div className="flex gap-4">
-                <a
-                  href={project.github}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  Code
-                </a>
-                <a
-                  href={project.live}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Live Demo
-                </a>
+              <div className="flex flex-wrap items-center gap-4">
+                {project.github && project.github !== "#" ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Github className="w-4 h-4" />
+                    Code
+                  </a>
+                ) : (
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground/40 cursor-not-allowed select-none" aria-disabled="true">
+                    <Github className="w-4 h-4" />
+                    Code
+                  </span>
+                )}
+                {project.live && project.live !== "#" ? (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                ) : (
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground/40 cursor-not-allowed select-none" aria-disabled="true">
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </span>
+                )}
+
+                {/* Open Project button */}
+                {project.github && project.github !== "#" ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-auto flex items-center gap-2 px-4 py-1.5 rounded-lg text-sm font-medium
+                               bg-glow-purple/10 border border-glow-purple/30 text-glow-purple
+                               hover:bg-glow-purple/20 hover:border-glow-purple/60 hover:glow-purple
+                               transition-all duration-300"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Open Project
+                  </a>
+                ) : (
+                  <span
+                    className="ml-auto flex items-center gap-2 px-4 py-1.5 rounded-lg text-sm font-medium
+                               bg-secondary/50 border border-border text-muted-foreground/40
+                               cursor-not-allowed select-none"
+                    aria-disabled="true"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Open Project
+                  </span>
+                )}
               </div>
             </div>
           ))}

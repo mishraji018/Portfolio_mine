@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     --background: 222 47% 6%;
@@ -113,6 +117,21 @@
   .text-glow-purple {
     text-shadow: 0 0 10px hsl(var(--glow-purple) / 0.5),
                  0 0 20px hsl(var(--glow-purple) / 0.3);
+  }
+
+  .text-glow-green {
+    text-shadow: 0 0 10px hsl(var(--glow-green) / 0.5),
+                 0 0 20px hsl(var(--glow-green) / 0.3);
+  }
+
+  .text-glow-orange {
+    text-shadow: 0 0 10px hsl(var(--glow-orange) / 0.5),
+                 0 0 20px hsl(var(--glow-orange) / 0.3);
+  }
+
+  .text-glow-pink {
+    text-shadow: 0 0 10px hsl(var(--glow-pink) / 0.5),
+                 0 0 20px hsl(var(--glow-pink) / 0.3);
   }
 
   .glass {

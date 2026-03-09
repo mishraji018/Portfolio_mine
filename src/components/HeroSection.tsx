@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -14,16 +14,21 @@ const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(false);
-      setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % rotatingTexts.length);
         setIsVisible(true);
       }, 500);
     }, 3500);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   return (
@@ -83,7 +88,7 @@ const HeroSection = () => {
           className="text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in"
           style={{ animationDelay: "0.3s" }}
         >
-          Passionate about artificial intelligence, machine learning, and creating 
+          Passionate about artificial intelligence, machine learning, and creating
           innovative solutions that push the boundaries of technology.
         </p>
 

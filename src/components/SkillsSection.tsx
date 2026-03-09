@@ -17,9 +17,9 @@ const tabs: Tab[] = [
 ];
 
 const skillsData = {
-  frontend: ["HTML5", "CSS3", "JavaScript", "React", "Bootstrap", "Responsive Design", "DOM Manipulation", "AJAX", "JSON"],
-  backend: ["Node.js", "Python", "Java", "C++", "SQL", "PHP", "Data Structures", "Algorithms", "OOPs"],
-  tools: ["Git", "GitHub", "VS Code", "Linux", "NPM", "Chrome DevTools", "Figma", "Netlify", "Vercel"],
+  frontend: ["HTML5", "CSS3", "JavaScript", "React"],
+  backend: ["Node.js", "Python", "Java", "C++", "SQL", "Data Structures", "Algorithms", "OOPs"],
+  tools: ["Git", "GitHub", "VS Code", "NPM", "Chrome DevTools", "Figma", "Netlify", "Vercel"],
   design: ["CSS Animations", "Transitions", "Keyframes", "Flexbox", "Grid Layout", "SVG Animation", "Hover Effects", "Responsive UI"],
 };
 
