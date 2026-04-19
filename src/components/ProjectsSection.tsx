@@ -7,7 +7,7 @@ const projects = [
     description: "Python based AI voice assistant",
     tech: ["Python", "SpeechRecognition", "PyAudio", "NLP"],
     github: "https://github.com/mishraji018/Voice_assistant_anti",
-    live: "https://github.com/mishraji018/Voice_assistant_anti",
+    live: "https://mishraji018.github.io/Voice_assistant_anti/",
   },
   {
     title: "Task Caretaker",
