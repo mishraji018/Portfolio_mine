@@ -4,8 +4,8 @@ import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     title: "Voice Assistant AI",
-    description: "Python based AI voice assistant",
-    tech: ["Python", "SpeechRecognition", "PyAudio", "NLP"],
+    description: "Jarvis-style AI assistant with neural TTS, Gemini AI brain & HUD interface",
+    tech: ["Python", "Gemini AI", "Edge TTS", "SQLite"],
     github: "https://github.com/mishraji018/Voice_assistant_anti",
     live: "https://mishraji018.github.io/Voice_assistant_anti/",
   },
