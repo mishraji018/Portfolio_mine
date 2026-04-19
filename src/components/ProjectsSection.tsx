@@ -17,11 +17,11 @@ const projects = [
     live: "https://github.com/mishraji018/task_caretaker",
   },
   {
-    title: "Portfolio Website",
-    description: "Personal developer portfolio",
-    tech: ["React", "TypeScript", "TailwindCSS", "Vite"],
-    github: "https://github.com/mishraji018",
-    live: "https://github.com/mishraji018",
+    title: "Delhi Visit",
+    description: "AI-powered Delhi tour guide with smart planner & mini explorer",
+    tech: ["React", "JavaScript", "Groq API", "TailwindCSS"],
+    github: "https://github.com/mishraji018/Delhi-visit",
+    live: "https://delhi-visit.vercel.app",
   },
   {
     title: "Solar System",
