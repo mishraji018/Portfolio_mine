@@ -25,10 +25,10 @@ const projects = [
   },
   {
     title: "Solar System",
-    description: "Interactive solar system simulation",
+    description: "Interactive 3D solar system simulation with cinematic visuals",
     tech: ["JavaScript", "Three.js", "HTML", "CSS"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/mishraji018/Solar-System",
+    live: "https://solar-system-sepia-ten.vercel.app/", 
   },
 ];
 
