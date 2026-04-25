@@ -35,7 +35,7 @@ const projects = [
     description: "AR-powered restaurant experience with AI-driven menu & group table ordering.",
     tech: ["React", "Three.js", "Framer Motion", "TanStack"],
     github: "https://github.com/mishraji018/fooder-order",
-    live: "https://fooder-order.vercel.app/demo.html", 
+    live: "https://fooder-order.vercel.app", 
   },
 ];
 
