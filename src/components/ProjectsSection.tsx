@@ -32,10 +32,10 @@ const projects = [
   },
   {
     title: "FoodAR — Premium Dine-In",
-    description: "AR-powered restaurant experience with AI-driven menu & group table ordering.",
+    description: "Futuristic AR-powered dining experience with AI-chef assist, real-time tracking, and scifi HUD interface.",
     tech: ["React", "Three.js", "Framer Motion", "TanStack"],
     github: "https://github.com/mishraji018/fooder-order",
-    live: "https://fooder-order.vercel.app", 
+    live: "https://fooder-order-ten.vercel.app", 
   },
 ];
 
