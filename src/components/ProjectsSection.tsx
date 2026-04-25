@@ -30,6 +30,13 @@ const projects = [
     github: "https://github.com/mishraji018/Solar-System",
     live: "https://solar-system-sepia-ten.vercel.app/", 
   },
+  {
+    title: "FoodAR — Premium Dine-In",
+    description: "AR-powered restaurant experience with AI-driven menu & group table ordering.",
+    tech: ["React", "Three.js", "Framer Motion", "TanStack"],
+    github: "https://github.com/mishraji018/fooder-order",
+    live: "https://fooder-order.vercel.app/welcome", 
+  },
 ];
 
 const ProjectsSection = () => {
