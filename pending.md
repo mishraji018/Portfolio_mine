@@ -4,6 +4,184 @@ Things to fill in with real data before deploying.
 
 ---
 
+## 🗺️ Improvement Roadmap (Priority Order)
+
+Work through this step by step — do not skip ahead.
+
+```
+1. Hero
+2. Projects
+3. About + Profile photo
+4. Skills
+5. Currently Building
+6. Contact
+7. Loading + animations
+8. Mobile optimization
+9. Performance
+10. SEO + final polish
+```
+
+---
+
+## 🔴 High Priority — Must Change
+
+### 1. Hero Section
+- [ ] Make your name immediately visible (large, bold)
+- [ ] Add clear role/title: `Developer • AI/ML • Full-Stack`
+- [ ] Add 1 short professional tagline
+- [ ] Keep only **2 CTA buttons**:
+  - `View Projects`
+  - `Contact Me`
+
+### 2. Projects Section
+- [ ] Add **4–6 best projects** only (not everything)
+- [ ] Every project must show:
+  - Problem / Idea
+  - What you built
+  - Tech stack
+  - GitHub link
+  - Live Demo link
+- [ ] Add screenshots / video previews where possible
+
+### 3. Project Cards
+- [ ] Improve hover interaction
+- [ ] Show tech stack as small badges
+- [ ] Add **View Case Study** for strongest 2–3 projects
+- [ ] Don't make cards unnecessarily huge
+
+### 4. About Section
+- [ ] Keep it short — 3–5 lines max
+- [ ] Clearly explain who you are + what you're interested in
+- [ ] Add profile photo professionally placed
+
+### 5. Skills Section
+Organize into clear categories instead of one giant list:
+- [ ] Languages
+- [ ] Frontend
+- [ ] Backend
+- [ ] AI / ML
+- [ ] Tools
+- [ ] Databases
+
+---
+
+## 🟡 Medium Priority — Makes It Feel Premium
+
+### 6. Currently Building
+- [ ] Add 2–3 active projects
+- [ ] Show status for each:
+  - `Building` / `In Progress` / `Completed`
+
+### 7. Experience / Achievements
+- [ ] Add internships, certifications, hackathons, achievements
+- [ ] If not much yet, keep this section compact
+
+### 8. GitHub Integration
+- [ ] GitHub profile link (prominent)
+- [ ] Optional: GitHub activity section
+- [ ] ⚠️ Don't overdo GitHub stats widgets
+
+### 9. Contact Section
+- [ ] Strong CTA headline: `"Have an idea? Let's build it."`
+- [ ] Show: Email · LinkedIn · GitHub
+
+### 10. Footer
+- [ ] Name
+- [ ] GitHub · LinkedIn · Email links
+- [ ] Small copyright line
+
+---
+
+## 🟢 UI/UX Polish
+
+### 11. Loading Experience
+- [ ] Clean initial loader / skeleton
+- [ ] ⚠️ Don't make loading animation too long
+
+### 12. Page Transitions
+- [ ] Smooth section transitions
+- [ ] Keep them subtle — not flashy
+
+### 13. Scroll Effects
+- [ ] Scroll progress indicator ✅ (already done)
+- [ ] Small reveal animations on scroll
+- [ ] ⚠️ Don't animate everything
+
+### 14. Hover Effects
+- [ ] Project cards
+- [ ] Buttons
+- [ ] Social icons
+- [ ] Skill badges
+
+### 15. Custom Cursor
+- [ ] Optional — desktop only ✅ (already done)
+- [ ] Disable on mobile ✅ (already done)
+
+---
+
+## ⚡ Performance — VERY IMPORTANT
+
+- [ ] Compress profile + project images
+- [ ] Use **WebP / AVIF** format where possible
+- [ ] Lazy-load images below the fold
+- [ ] Don't load huge 3D assets unnecessarily
+- [ ] Keep mobile smooth (test on real device)
+- [ ] Add `prefers-reduced-motion` support
+
+---
+
+## 📱 Mobile Optimization
+
+Test at these breakpoints:
+- [ ] 320px
+- [ ] 375px
+- [ ] 430px
+- [ ] Tablet
+- [ ] Desktop
+
+Check these work on mobile:
+- [ ] Navbar
+- [ ] Hero section
+- [ ] Project cards
+- [ ] Typography sizing
+- [ ] Spacing
+- [ ] Buttons
+- [ ] No horizontal scrolling anywhere
+
+---
+
+## 🔍 Recruiter / SEO
+
+- [ ] Page title: `Pawan Kumar Mishra | Developer`
+- [ ] Add meta description
+- [ ] Add **Open Graph** tags (LinkedIn / WhatsApp preview)
+- [ ] Add favicon ✅ (check it works)
+- [ ] GitHub + LinkedIn links — make them obvious
+- [ ] Every project link must actually work
+
+---
+
+## 🎨 Design System — Keep These
+
+> **DO NOT change these** — your direction is right.
+
+| Token | Value |
+|---|---|
+| Background | `#08090D` |
+| Cards | `#111318` |
+| Text | `#F5F7FA` |
+| Secondary text | `#9CA3AF` |
+| Purple accent | `#7C3AED` |
+| Cyan accent | `#22D3EE` |
+| Borders | `rgba(255,255,255,0.08)` |
+| Heading font | Sora |
+| Body font | Manrope |
+
+**Overall direction: Dark + Minimal + Technical + Premium** ✅
+
+---
+
+
 ## 🔴 Critical (Do First)
 
 ### 1. Resume PDF
