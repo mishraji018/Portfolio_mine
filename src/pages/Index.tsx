@@ -22,6 +22,8 @@ import Contact from "../components/sections/Contact";
 import DevPanel from "../components/ui/DevPanel";
 import TerminalDrawer from "../components/ui/TerminalDrawer";
 import AiAssistantModal from "../components/ui/AiAssistantModal";
+import BackToTop from "../components/ui/BackToTop";
+import AiChatbot from "../components/ui/AiChatbot";
 
 const Index: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,6 +63,8 @@ const Index: React.FC = () => {
       {/* Global Interactive Cursor & Utilities */}
       <CustomCursor />
       <ScrollProgress />
+      <BackToTop />
+      <AiChatbot onOpenTerminal={() => setIsTerminalOpen(true)} />
 
       {/* Navigation Header & Modals */}
       <Navbar

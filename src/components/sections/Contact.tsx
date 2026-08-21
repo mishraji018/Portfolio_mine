@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, FileText, ArrowUpRight, Sparkles } from "lucide-react";
+import { Mail, Github, Linkedin, FileText, ArrowUpRight, Sparkles, Phone, MessageCircle } from "lucide-react";
 import { MagneticButton } from "../ui/MagneticButton";
 
 export const Contact: React.FC = () => {
@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl sm:text-7xl md:text-8xl font-extrabold font-heading text-[#F5F7FA] leading-[0.95] max-w-5xl"
           >
-            LET'S BUILD SOMETHING INTERESTING.
+            HAVE AN IDEA? LET'S BUILD IT.
           </motion.h2>
 
           <p className="text-base sm:text-xl text-[#A6ADB8] max-w-2xl font-sans">
@@ -30,7 +30,7 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Primary Contact CTA & Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
           <MagneticButton strength={0.2} className="w-full">
             <a
               href="mailto:pmishra2084@gmail.com"
@@ -108,6 +108,44 @@ export const Contact: React.FC = () => {
                 <p className="font-heading font-extrabold text-lg mt-1">
                   DOWNLOAD CV ↗
                 </p>
+              </div>
+            </a>
+          </MagneticButton>
+
+          {/* Phone */}
+          <MagneticButton strength={0.2} className="w-full">
+            <a
+              href="tel:+918400018527"
+              data-cursor="CALL ↗"
+              className="flex flex-col justify-between p-6 rounded-card bg-[#15181D] border border-[#242932] hover:border-[#5FE3A1] transition-all h-44 group"
+            >
+              <div className="flex items-center justify-between text-[#5FE3A1]">
+                <Phone className="w-6 h-6" />
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
+              <div>
+                <p className="text-xs font-mono text-[#69717D]">PHONE</p>
+                <p className="font-heading font-bold text-sm text-[#F5F7FA] mt-1">+91 84000 18527</p>
+              </div>
+            </a>
+          </MagneticButton>
+
+          {/* WhatsApp */}
+          <MagneticButton strength={0.2} className="w-full">
+            <a
+              href="https://wa.me/918400018527"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="WHATSAPP ↗"
+              className="flex flex-col justify-between p-6 rounded-card bg-[#15181D] border border-[#242932] hover:border-[#5FE3A1] transition-all h-44 group"
+            >
+              <div className="flex items-center justify-between text-[#5FE3A1]">
+                <MessageCircle className="w-6 h-6" />
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
+              <div>
+                <p className="text-xs font-mono text-[#69717D]">WHATSAPP</p>
+                <p className="font-heading font-bold text-base text-[#F5F7FA] mt-1">Message Me ↗</p>
               </div>
             </a>
           </MagneticButton>

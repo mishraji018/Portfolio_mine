@@ -78,7 +78,7 @@ export const About: React.FC = () => {
                   <span className="text-xs font-mono">EDUCATION</span>
                 </div>
                 <p className="font-heading font-semibold text-sm text-[#F5F7FA]">B.Tech CSE</p>
-                <p className="text-[11px] font-mono text-[#69717D]">3rd Year Student</p>
+                <p className="text-[11px] font-mono text-[#69717D]">Running 3rd Year · KIET</p>
               </div>
 
               <div className="p-4 rounded-card bg-[#15181D] border border-[#242932] space-y-1">
@@ -86,8 +86,8 @@ export const About: React.FC = () => {
                   <MapPin className="w-4 h-4" />
                   <span className="text-xs font-mono">LOCATION</span>
                 </div>
-                <p className="font-heading font-semibold text-sm text-[#F5F7FA]">India</p>
-                <p className="text-[11px] font-mono text-[#69717D]">UTC+5:30</p>
+                <p className="font-heading font-semibold text-sm text-[#F5F7FA]">Ghaziabad, India</p>
+                <p className="text-[11px] font-mono text-[#69717D]">Open to Remote · UTC+5:30</p>
               </div>
 
               <div className="p-4 rounded-card bg-[#15181D] border border-[#242932] space-y-1 col-span-2 sm:col-span-1">
@@ -95,8 +95,32 @@ export const About: React.FC = () => {
                   <Cpu className="w-4 h-4" />
                   <span className="text-xs font-mono">FOCUS</span>
                 </div>
-                <p className="font-heading font-semibold text-sm text-[#F5F7FA]">AI & Fullstack</p>
-                <p className="text-[11px] font-mono text-[#69717D]">React · Python · OpenCV</p>
+                <p className="font-heading font-semibold text-sm text-[#F5F7FA]">AI/ML · Full Stack</p>
+                <p className="text-[11px] font-mono text-[#69717D]">Python · React · OpenCV</p>
+              </div>
+            </div>
+
+            {/* CGPA Highlight */}
+            <div className="p-4 rounded-card bg-[#7C5CFC]/10 border border-[#7C5CFC]/30 flex items-center gap-3">
+              <div className="text-2xl font-extrabold font-heading text-[#9278FF]">8.5</div>
+              <div>
+                <p className="text-xs font-mono text-[#7C5CFC] tracking-wider">CGPA / 10</p>
+                <p className="text-[11px] font-mono text-[#69717D]">AI & Machine Learning Spec.</p>
+              </div>
+              <div className="ml-auto px-3 py-1 rounded-full bg-[#5FE3A1]/10 border border-[#5FE3A1]/30 text-[11px] font-mono text-[#5FE3A1]">
+                OPEN TO INTERNSHIPS
+              </div>
+            </div>
+
+            {/* What I'm Looking For */}
+            <div className="p-4 rounded-card bg-[#15181D] border border-[#242932] space-y-2">
+              <p className="text-xs font-mono text-[#61D9FF] tracking-wider">WHAT I'M LOOKING FOR</p>
+              <div className="flex flex-wrap gap-2">
+                {["AI/ML Internship", "Full Stack", "Python Backend", "Remote / Hybrid", "Available Now"].map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 rounded-btn bg-[#0D0F12] border border-[#343B46] text-[11px] font-mono text-[#A6ADB8]">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>

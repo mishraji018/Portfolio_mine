@@ -57,7 +57,7 @@ export const GithubStats: React.FC = () => {
               GITHUB ↗
             </a>
             <a
-              href="https://leetcode.com/"
+              href="https://leetcode.com/u/pawan_018/"
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2 rounded-btn bg-[#15181D] border border-[#242932] text-xs font-mono text-[#A6ADB8] hover:border-[#F4C95D] hover:text-[#F4C95D] transition-all"

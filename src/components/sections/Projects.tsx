@@ -1,29 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Cpu, Github } from "lucide-react";
+import { ArrowUpRight, Cpu, Github, ExternalLink } from "lucide-react";
 import { projectsData, Project } from "../../data/projects";
-import { ProjectPreview } from "../projects/ProjectPreview";
 import { ProjectXRayModal } from "../projects/ProjectXRayModal";
 
 export const Projects: React.FC = () => {
-  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
   const [activeXRayProject, setActiveXRayProject] = useState<Project | null>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setMousePos({ x: e.clientX, y: e.clientY });
-  };
 
   return (
     <section id="work" className="py-24 px-6 bg-[#08090B] relative">
-      {/* Floating Hover Preview Card */}
-      <ProjectPreview
-        image={hoveredProject?.image || ""}
-        title={hoveredProject?.title || ""}
-        isVisible={!!hoveredProject}
-        mousePos={mousePos}
-      />
-
       {/* X-Ray Architecture Modal */}
       <ProjectXRayModal
         project={activeXRayProject}
@@ -43,41 +28,66 @@ export const Projects: React.FC = () => {
             </h2>
           </div>
           <p className="text-sm font-mono text-[#69717D] max-w-sm">
-            HOVER OVER A ROW TO PREVIEW · CLICK ARCHITECTURE TO VIEW X-RAY DIAGRAM
+            PRODUCTION DEPLOYMENTS · REAL-TIME APPS · ARCHITECTURAL DESIGNS
           </p>
         </div>
 
-        {/* Editorial Project Rows */}
-        <div className="divide-y divide-[#242932]" onMouseMove={handleMouseMove}>
+        {/* Project Cards Grid */}
+        <div className="space-y-8 pt-12">
           {projectsData.map((project, idx) => (
-            <motion.a
+            <motion.div
               key={project.id}
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              onMouseEnter={() => setHoveredProject(project)}
-              onMouseLeave={() => setHoveredProject(null)}
-              className="py-10 group relative transition-all duration-300 hover:bg-[#0D0F12]/60 px-4 rounded-xl block cursor-pointer"
-              data-cursor="VIEW ON GITHUB ↗"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="p-6 sm:p-8 rounded-card bg-[#0D0F12] border border-[#242932] hover:border-[#7C5CFC]/60 transition-all duration-300 group relative shadow-lg"
             >
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                {/* Left: Number & Title */}
-                <div className="flex items-start space-x-6">
-                  <span className="text-xl sm:text-2xl font-mono text-[#69717D] group-hover:text-[#7C5CFC] transition-colors pt-1">
-                    {project.number}
-                  </span>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                {/* Left Column: Fixed Image Preview */}
+                <div className="lg:col-span-5 relative">
+                  <a
+                    href={project.liveUrl || project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block relative rounded-xl overflow-hidden border border-[#242932] group-hover:border-[#7C5CFC]/50 transition-all duration-500 bg-[#15181D] shadow-md h-52 sm:h-60 w-full"
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80" />
 
+                    {/* Badge on Image */}
+                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#08090B]/80 backdrop-blur-md border border-[#242932] text-[10px] font-mono text-[#7C5CFC]">
+                      {project.number}
+                    </div>
+
+                    {project.liveUrl && (
+                      <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-[#7C5CFC] text-white text-[11px] font-mono font-semibold flex items-center gap-1 shadow-lg">
+                        <span>LIVE APP</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </div>
+                    )}
+                  </a>
+                </div>
+
+                {/* Right Column: Project Details */}
+                <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
                   <div>
-                    <h3 className="text-2xl sm:text-4xl font-bold font-heading text-[#F5F7FA] group-hover:text-[#7C5CFC] transition-colors flex items-center gap-3">
-                      {project.title}
-                      <ArrowUpRight className="w-6 h-6 text-[#7C5CFC] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </h3>
-                    <p className="text-sm text-[#A6ADB8] mt-2 max-w-xl font-sans">
+                    <div className="flex items-center justify-between gap-4">
+                      <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#F5F7FA] group-hover:text-[#7C5CFC] transition-colors flex items-center gap-2">
+                        {project.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-sm sm:text-base font-semibold text-[#A6ADB8] mt-1.5 font-sans">
                       {project.tagline}
+                    </p>
+
+                    <p className="text-xs sm:text-sm text-[#69717D] mt-3 leading-relaxed font-sans line-clamp-3">
+                      {project.overview}
                     </p>
 
                     {/* Tech Badges */}
@@ -85,38 +95,50 @@ export const Projects: React.FC = () => {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-1 rounded-md bg-[#15181D] border border-[#242932] text-[11px] font-mono text-[#69717D] group-hover:border-[#343B46] transition-colors"
+                          className="px-2.5 py-1 rounded-md bg-[#15181D] border border-[#242932] text-[11px] font-mono text-[#A6ADB8] group-hover:border-[#343B46] transition-colors"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
-                </div>
 
-                {/* Right: Actions */}
-                <div className="flex items-center space-x-3 pt-2 lg:pt-0" onClick={(e) => e.stopPropagation()}>
-                  <button
-                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setActiveXRayProject(project); }}
-                    className="inline-flex items-center px-4 py-2.5 rounded-btn bg-[#15181D] border border-[#242932] text-xs font-mono text-[#F5F7FA] hover:border-[#7C5CFC] hover:text-[#7C5CFC] transition-all shadow-sm"
-                  >
-                    <Cpu className="w-4 h-4 mr-2 text-[#7C5CFC]" />
-                    <span>VIEW ARCHITECTURE</span>
-                  </button>
+                  {/* Actions Row */}
+                  <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[#242932]/70">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center px-4 py-2 rounded-btn bg-[#7C5CFC] text-white text-xs font-mono font-semibold hover:bg-[#9278FF] transition-all shadow-[0_0_20px_rgba(124,92,252,0.3)]"
+                      >
+                        <span>OPEN LIVE DEMO</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+                      </a>
+                    )}
 
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-2.5 rounded-btn bg-[#15181D] border border-[#242932] text-[#A6ADB8] hover:text-[#F5F7FA] hover:border-[#343B46] transition-all"
-                    aria-label="GitHub Repository"
-                  >
-                    <Github className="w-4 h-4" />
-                  </a>
+                    <button
+                      onClick={() => setActiveXRayProject(project)}
+                      className="inline-flex items-center px-4 py-2 rounded-btn bg-[#15181D] border border-[#242932] text-xs font-mono text-[#F5F7FA] hover:border-[#7C5CFC] hover:text-[#7C5CFC] transition-all shadow-sm cursor-pointer"
+                    >
+                      <Cpu className="w-4 h-4 mr-1.5 text-[#7C5CFC]" />
+                      <span>X-RAY ARCHITECTURE</span>
+                    </button>
+
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center px-3.5 py-2 rounded-btn bg-[#15181D] border border-[#242932] text-xs font-mono text-[#A6ADB8] hover:text-[#F5F7FA] hover:border-[#7C5CFC] transition-all"
+                      aria-label="GitHub Repository"
+                    >
+                      <Github className="w-4 h-4 mr-1.5" />
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -125,3 +147,4 @@ export const Projects: React.FC = () => {
 };
 
 export default Projects;
+

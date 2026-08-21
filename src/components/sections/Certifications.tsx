@@ -9,31 +9,39 @@ const certs = [
     year: "2026",
     color: "#61D9FF",
     badge: "🔵",
-    link: "#",
+    link: "/COMPLETION CERTIFICATE.pdf",
   },
   {
-    title: "Machine Learning",
-    issuer: "NPTEL / Coursera",
+    title: "ER Modeling",
+    issuer: "Infosys Springboard",
     year: "2025",
-    color: "#7C5CFC",
-    badge: "🟣",
-    link: "#",
+    color: "#FF6B7A",
+    badge: "🔴",
+    link: "/Pawan Kumar Mishra_infosys springboard.pdf",
   },
   {
-    title: "Basic OOPs with Java",
-    issuer: "Infosys Springboard / NPTEL",
-    year: "2025",
+    title: "Introduction to AI",
+    issuer: "LinkedIn Learning",
+    year: "2024",
+    color: "#0A66C2",
+    badge: "🔷",
+    link: "/202401100200225_PAWAN KUMAR MISHRA_CSE(D) (2).pdf",
+  },
+  {
+    title: "Introduction to NoSQL Databases",
+    issuer: "LinkedIn Learning",
+    year: "2024",
     color: "#5FE3A1",
     badge: "🟢",
-    link: "#",
+    link: "/202401100200225_Pawan Kumar Mishra_CSE(D)_completion Certificate.pdf",
   },
   {
-    title: "Cybersecurity Fundamentals",
-    issuer: "IBM / Coursera",
-    year: "2026",
-    color: "#F4C95D",
-    badge: "🟡",
-    link: "#",
+    title: "Experiential Learning (DA)",
+    issuer: "FutureSkills Prime",
+    year: "2024",
+    color: "#EC4899",
+    badge: "🌸",
+    link: "/Pawan Kumar Mishra_202401100200225_CSE(D)_Project_Completion_DA.pdf",
   },
 ];
 
@@ -61,7 +69,7 @@ export const Certifications: React.FC = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 pt-12">
           {certs.map((cert, idx) => (
             <motion.a
               key={cert.title}
@@ -102,11 +110,6 @@ export const Certifications: React.FC = () => {
             </motion.a>
           ))}
         </div>
-
-        {/* Note */}
-        <p className="text-xs font-mono text-[#3D4451] mt-8 text-center">
-          // Update cert links in src/components/sections/Certifications.tsx
-        </p>
       </div>
     </section>
   );
